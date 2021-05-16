@@ -1,33 +1,40 @@
 <div>
     
-    <div id="searchbox" class="full-width">      
-        <input class="filter_search" (keyup.enter)="searchEnterClicked($event, searchbox.value)"
+    <!-- <div id="searchbox" class="full-width">      
+        <input (keyup.enter)="searchEnterClicked($event, searchbox.value)"
           (blur)="searchClicked($event, searchbox.value)" placeholder="Search Caller..." #searchbox />
-          <div class="filter_search">
+          <div>
             <mat-icon (click)="searchClicked($event, searchbox.value)">search</mat-icon>
           </div>
-        </div>
+        </div> -->
+        
+            
+    <div class="search-form">
+            <input  class = "search-input" autocomplete="off" #searchbox placeholder="Search by Caller..."  
+            (keyup.enter)="searchEnterClicked($event, searchbox.value)" (blur)="searchClicked($event, searchbox.value)"/>
+            <mat-icon class="search-icon" (click)="searchClicked($event, searchbox.value)" >search</mat-icon>
+            <div style="float: right"><a routerLink="/dashboard">Back to Dashboard</a></div>
+    </div>      
     
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-     <!-- Name Column -->
-  <ng-container matColumnDef="caller">
-    <th mat-header-cell *matHeaderCellDef> Caller </th>
-    <td mat-cell *matCellDef="let element"> {{element.caller}} </td>
-  </ng-container>
-  <ng-container matColumnDef="timeOfCall">
-    <th mat-header-cell *matHeaderCellDef> Time Of Call </th>
-    <td mat-cell *matCellDef="let element"> {{element.timeOfCall}} </td>
-  </ng-container>
-  <ng-container matColumnDef="callTitle">
-    <th mat-header-cell *matHeaderCellDef> Call Reason </th>
-    <td mat-cell *matCellDef="let element"> {{element.callTitle}} </td>
-  </ng-container>
-  <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Name Column -->
+    <ng-container matColumnDef="caller">
+        <th mat-header-cell *matHeaderCellDef> Caller </th>
+        <td mat-cell *matCellDef="let element"> {{element.caller}} </td>
+    </ng-container>
+    <ng-container matColumnDef="timeOfCall">
+        <th mat-header-cell *matHeaderCellDef> Time Of Call </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeOfCall}} </td>
+    </ng-container>
+    <ng-container matColumnDef="callTitle">
+        <th mat-header-cell *matHeaderCellDef> Call Reason </th>
+        <td mat-cell *matCellDef="let element"> {{element.callTitle}} </td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 </div>

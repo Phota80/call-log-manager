@@ -14,6 +14,7 @@ export class SearchCallComponent implements OnInit,OnDestroy {
   //dataSource = calldata;
   dataSource : CallData[];
   subscription: Subscription;
+  callSubscription:Subscription;
   constructor(private callLogSvc: CallLogService) { }
 
   ngOnInit(): void {
@@ -21,8 +22,8 @@ export class SearchCallComponent implements OnInit,OnDestroy {
    this.getCallData();
   }
   getCallData(): void {
-    this.callLogSvc.getCallData()
-      .subscribe(calls => this.dataSource = calls.slice(1, 5));
+    this.callSubscription = this.callLogSvc.getCallData()
+      .subscribe(calls => this.dataSource = calls); //calls.slice(1, 5));
   }
   searchClicked(event, v: string) {
     this.subscription = this.callLogSvc.searchCallData(v).subscribe(calls=> this.dataSource =calls)
@@ -34,6 +35,9 @@ export class SearchCallComponent implements OnInit,OnDestroy {
     event.target.blur();
   }
   ngOnDestroy() {
+    if(this.callSubscription){
+      this.callSubscription.unsubscribe();
+    }
     if(this.subscription){
       this.subscription.unsubscribe();
     }

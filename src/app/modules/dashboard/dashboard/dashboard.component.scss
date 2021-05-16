@@ -1,0 +1,44 @@
+container{
+    // color: #ccc;
+    // background-color: #414141;
+    padding: 15px 25px 2px 5px;
+    height: 100%;
+    
+  }
+  .title{
+    background-color: #1c73ad;
+    color: #ccc;
+    position: relative;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 700px) {
+    .col-25, .col-75 {
+      width: 100%;
+      margin-top: 0;
+    }
+  }

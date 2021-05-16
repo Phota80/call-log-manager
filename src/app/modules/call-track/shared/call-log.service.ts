@@ -24,7 +24,8 @@ export class CallLogService {
   searchCallData(searchTxt: string): Observable<CallData[]> {
     if (!searchTxt.trim()) {
       // if not search text, return empty  array.
-      return of([]);
+      //return of([]);
+      this.getCallData();
     }
     return this.http.get<CallData[]>(`${this.apiUrl}/?caller=${searchTxt}`).pipe(
       tap(x => x.length ?

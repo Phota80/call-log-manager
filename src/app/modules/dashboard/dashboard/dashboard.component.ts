@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { single } from '../shared/chartformat';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -26,7 +25,8 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    //TODO, need to pull data from Inmemory api & assign to single source
+
   }
   onSelect(data): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
