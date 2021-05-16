@@ -13,7 +13,7 @@
             <input  class = "search-input" autocomplete="off" #searchbox placeholder="Search by Caller..."  
             (keyup.enter)="searchEnterClicked($event, searchbox.value)" (blur)="searchClicked($event, searchbox.value)"/>
             <mat-icon class="search-icon" (click)="searchClicked($event, searchbox.value)" >search</mat-icon>
-            <div style="float: right"><a routerLink="/dashboard">Back to Dashboard</a></div>
+            <div style="float: right"><a routerLink="/dashboard">View Dashboard</a></div>
     </div>      
     
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
