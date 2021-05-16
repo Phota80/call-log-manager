@@ -1,0 +1,104 @@
+ <div  class="container">
+    <form [formGroup]="addCallLogForm" >
+        <div>
+            <label>
+                Caller:
+                 <input type="text" formControlName="caller" >
+               </label>
+            </div>
+        <div>
+            <label>
+                Call Title:
+                 <input type="text" formControlName="callTitle" >
+               </label>
+            </div>
+            <label>
+                Call Desc:
+                 <textarea type="text" formControlName="callDesc" ></textarea>
+               </label>
+               <label >
+                Call Time:
+                 <input type="text" formControlName="timeOfCall" >
+               </label>
+               <label >
+                Call Status:
+                 <Select formControlName="status" >
+                    <option value="open">Open</option>
+                    <option value="close">Close</option>
+                    <option value="progress">Progress</option>
+                 </Select>
+               </label>  
+               <div>
+                <span>
+               <input type="cancel" value="Cancel">  
+                </span>
+                <span>  
+               <input type="submit" value="Save" (click)="onSubmit($event,addCallLogForm)">  
+                </span>
+            </div>  
+    </form>
+
+</div> 
+
+<!-- <div  class="container">
+    <form [formGroup]="addCallLogForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-25">
+                <label>Caller:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="caller" placeholder="Caller name.."/>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label> Call Title:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="callTitle" placeholder="Caller Title.."/>
+            </div>
+        </div>          
+        <div class="row">
+            <div class="col-25">
+                <label> Call Title:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="callTitle" placeholder="Caller Title.."/>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-25">
+                <label> Call Title:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="callTitle" placeholder="Caller Title.."/>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-25">
+                <label> Call Desc:</label>
+            </div>
+            <div class="col-75">
+                <textarea type="text" formControlName="callDesc" placeholder="Caller Desc.."></textarea>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-25">
+                <label> Call Time:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="timeOfCall" placeholder="Caller Desc.."></input>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-25">
+                <label> Call Status:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="status" placeholder="Caller Desc.."></input>
+            </div>
+        </div> 
+    </form>
+
+</div> 
+ -->
